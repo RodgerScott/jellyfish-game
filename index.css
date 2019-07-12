@@ -1,28 +1,209 @@
 body, html {
     height: 100%;
     background-color: lightblue;
-    margin: 0 auto;
 }
 
 body {
     display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-}
-
-h1 {
-    text-align: center;
-}
-
-main {
-    display:flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-canvas {
-    height: 600px;
-    width: 800px;
-    background-color: lightgrey;
+main {
+    height: 750px;
+    width: 400px;
+    background-color: lightgray;
+}
+
+.top-box {
+    height: 75px;
+    width: 90%;
+    position: relative;
+    background-color: purple;
+    border-radius: 15px;
+    left: 20px;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+
+.screen-box {
+    height: 225px;
+    width: 83%;
+    position: relative;
+    background-color: purple;
+    left: 32px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.screen {
+    height: 80%;
+    width: 90%;
+    background-color: black;
+    border-radius: 10px;
+    position: relative;
+    top: 8px;
+    left: 15px;
+}
+
+.controllers {
+    border-bottom: 100px solid purple;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    height: 0;
+    width: 332px;
+    position: relative;
+    right: 25px;
+    top: 42px;
+}
+
+.controller-bottom {
+    height: 40px;
+    width: 382px;
+    background-color: purple;
+    position: relative;
+    top: 42px;
+    right: 25px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.player-button {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: grey;
+    position: relative;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.player1 {
+    left: 150px;
+    bottom: 10px;
+}
+
+.player2 {
+    left: 225px;
+    top: 10px;
+}
+
+.player1-image {
+    position: relative;
+    left: 15px;
+    z-index: 1;
+}
+
+.title-frame {
+    border-radius: 15px;
+    background-color: black;
+    height: 85%;
+    width: 95%;
+    position: relative;
+    left: 10px;
+    top: 5px;
+}
+
+.base-portion {
+    height: 250px;
+    width: 100%;
+    background-color: purple;
+    position: relative;
+    top: 42px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.coin-area {
+    height: 150px;
+    width: 125px;
+    background-color: black;
+    position: relative;
+    left: 110px;
+    top: 15px;
+    border-radius: 15px;
+
+}
+.joystick {
+    position: relative;
+    height: 75px;
+    width: 25px;
+    left: 75px;
+    bottom: 35px;
+}
+
+.top-joystick {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: black;
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+
+.shaft-joystick {
+    height: 40px;
+    width: 10px;
+    background-color: black;
+    position: relative;
+    left: 17px;
+    top: 5px;
+}
+
+.base-joystick {
+    border-radius: 50%;
+    background-color: black;
+    height: 35px;
+    width: 45px;
+    position: relative;
+}
+
+.controller-button {
+    height: 30px;
+    width: 35px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    left: 190px;
+    bottom: 40px;
+    perspective: 100px;
+}
+
+.internal-button {
+    height: 20px;
+    width: 25px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: relative;
+    top:5px;
+    left: 5px;
+}
+
+.coin-slot {
+    background-color: orange;
+    height: 25px;
+    width: 10px;
+}
+
+.slot1 {
+    position: relative;
+    left: 35px;
+    top: 50px;
+}
+
+.slot2 {
+    position: relative;
+    left: 80px;
+    top: 25px;
+}
+
+#game-title {
+    position: relative;
+    top: 10px;
+    font-family: 'Monoton', cursive;
+    text-align: center;
+    color: yellow;
+    /* margin-top: 10px; */
 }
