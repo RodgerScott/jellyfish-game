@@ -9,26 +9,42 @@ let myGameArea = {
     clear: function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
-}
+};
 
 function startGame() {
     myGameArea.start();
-    jellyFish = new component(15, 15, "lightblue", 10, 10);
+    jellyFish = new component("./jellyfish.png", 150, 50);
 }
 
-function component(width, height, color, x, y) {
-    this.width = width;
-    this.height = height;
+function component(image, x, y) {
     this.x = x;
     this.y = y;
+    this.angle = 1;
+    this.image = new Image();
+    this.image.src = image;
     this.update = function() {
         ctx = myGameArea.context;
-        ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-    };
-    this.newPos = function () {
+        ctx.fillStyle = '#000';
+        ctx.fillRect(0,0,100,100);
 
-    }
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.angle / 180 / Math.PI);
+        ctx.drawImage(this.image, -16, -16);
+        ctx.restore();
+    };
+}
+
+function rotateLeft() {
+    jellyFish.angle -= 100;
+}
+
+function rotateRight() {
+   jellyFish.angle += 100;
+}
+
+function moveAhead() {
+
 }
 
 function updateGameArea() {
@@ -41,33 +57,17 @@ function updateGameArea() {
 
 document.addEventListener('keydown', event => {
     if (event.keyCode == 65) {
-        moveLeft();
+        rotateLeft();
     }
     if (event.keyCode == 68) {
-        moveRight();
+        rotateRight();
     }
-    if (event.keyCode == 87) {
-        moveUp();
+    if (event.keyCode == 32) {
+        moveAhead();
     }
-    if (event.keyCode == 83) {
-        moveDown();
-    }
-})
 
-function moveUp () {
-    jellyFish.y -= 1;
-}
+});
 
-function moveDown () {
-    jellyFish.y += 1;
-}
 
-function moveRight () {
-    jellyFish.x += 1;
-}
-
-function moveLeft () {
-    jellyFish.x -= 1;
-}
 
 startGame();
